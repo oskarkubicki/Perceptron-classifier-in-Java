@@ -28,6 +28,8 @@ public class Algorithm {
         FindDistances();
         PredictType(Integer.parseInt(k));
 
+        Accuracy();
+
 
     }
 
@@ -110,6 +112,33 @@ public class Algorithm {
 
             }
         }
+
+    }
+
+    public void Accuracy (){
+
+        int counter=0;
+
+
+        for (int i=0;i<test_data.size();i++){
+
+            if(test_data.get(i).getIrisType().nazwa.equalsIgnoreCase(test_data.get(i).getActualType().nazwa)){
+
+                counter++;
+
+
+
+
+            }
+
+
+
+
+        }
+
+        double accuracy=(double)counter/50;
+
+        System.out.println("accuracy is "+accuracy+"%");
 
     }
 
