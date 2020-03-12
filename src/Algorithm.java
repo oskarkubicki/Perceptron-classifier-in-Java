@@ -1,11 +1,15 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Algorithm {
 
-    private
+    private ArrayList<Iris> training_data;
+    private ArrayList<Iris> test_data;
 
 
-    public void mainloop{
+
+
+    public void mainloop(){
 
         Scanner scanner=new Scanner(System.in);
 
@@ -14,11 +18,14 @@ public class Algorithm {
 
         String k= scanner.next();
 
+        System.out.println("input path to training data");
+
+        String data_path=scanner.next();
 
         DataReader dataReader =new DataReader();
 
 
-        dataReader.readfile();
+        training_data=dataReader.readfile(data_path);
 
 
 
