@@ -5,6 +5,4 @@ public enum IrisType {Setosa("setosa"),Versicolor("versicolor"),Virginica("virgi
      IrisType(String nazwa){
          this.nazwa=nazwa;
      }
-
-
 }

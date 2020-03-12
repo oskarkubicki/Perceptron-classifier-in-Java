@@ -8,9 +8,6 @@ public class Iris {
     private IrisType irisType;
     private TreeMap<Double,IrisType> distances;
 
-
-
-
     public Iris(double sepal_length, double sepal_width, double petal_legth, double petal_width, String irisType) {
         this.sepal_length = sepal_length;
         this.sepal_width = sepal_width;
@@ -22,9 +19,14 @@ public class Iris {
         }else if (irisType.equalsIgnoreCase("versicolor")){
 
             this.irisType=IrisType.Versicolor;
-        }else {
+        }else if (irisType.equalsIgnoreCase("virginica")){
 
             this.irisType=IrisType.Virginica;
+        }
+
+        else {
+
+            this.irisType=null;
         }
     }
 
