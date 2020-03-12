@@ -12,7 +12,6 @@ public class Algorithm {
 
         Scanner scanner = new Scanner(System.in);
 
-
         System.out.println("Input k");
         String k = scanner.next();
         System.out.println("input path to training data");
@@ -22,7 +21,7 @@ public class Algorithm {
         System.out.println("input path to test data");
         String data_path1 = scanner.next();
 
-        DataReader dataReader1=new DataReader();
+        DataReader dataReader1 = new DataReader();
         test_data = dataReader1.readfile(data_path1, "test");
 
 
@@ -47,6 +46,7 @@ public class Algorithm {
     }
 
     public void PredictType(int k) {
+        int a=k;
         int counterSetosa = 0;
         int counterVersicolor = 0;
         int counterVirginica = 0;
@@ -73,11 +73,40 @@ public class Algorithm {
                 }
             }
 
-            if(counterSetosa>counterVersicolor&&counterSetosa>counterVirginica){
+            if (counterSetosa > counterVersicolor && counterSetosa > counterVirginica) {
+
+                test_data.get(i).setIrisType(IrisType.Setosa);
+
+                System.out.println("Predicted type:" + test_data.get(i).getIrisType() + " Actual type" + test_data.get(i).getActualType());
+
+                counterSetosa=0;
+                counterVersicolor=0;
+                counterVirginica=0;
+                k=a;
+
+            } else if (counterVersicolor > counterSetosa && counterVersicolor > counterVirginica) {
 
 
+                test_data.get(i).setIrisType(IrisType.Versicolor);
 
-                System.out.println("Predicted type: Virginica Setosa "+" Actual type"+test_data.get(i).getIrisType());
+                System.out.println("Predicted type:" + test_data.get(i).getIrisType() + " Actual type" + test_data.get(i).getActualType());
+
+                counterSetosa=0;
+                counterVersicolor=0;
+                counterVirginica=0;
+                k=a;
+
+            } else if (counterVirginica > counterSetosa && counterVirginica > counterVersicolor) {
+
+
+                test_data.get(i).setIrisType(IrisType.Virginica);
+
+                System.out.println("Predicted type:" + test_data.get(i).getIrisType() + " Actual type" + test_data.get(i).getActualType());
+
+                counterSetosa=0;
+                counterVersicolor=0;
+                counterVirginica=0;
+                k=a;
 
             }
         }

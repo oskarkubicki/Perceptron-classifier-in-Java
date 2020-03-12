@@ -6,7 +6,7 @@ public class Iris {
     private double petal_legth;
     private double petal_width;
     private IrisType irisType;
-    private TreeMap<Double,IrisType> distances;
+    private TreeMap<Double,IrisType> distances=new TreeMap<>();
     private IrisType actualType;
 
 
@@ -34,13 +34,13 @@ public class Iris {
 
 
 
-        if(irisType.substring(1, irisType.length()-1).equalsIgnoreCase("setosa")){
+        if(actualType.substring(1, actualType.length()-1).equalsIgnoreCase("setosa")){
 
             this.actualType=IrisType.Setosa;
-        }else if (irisType.substring(1, irisType.length()-1).equalsIgnoreCase("versicolor")){
+        }else if (actualType.substring(1, actualType.length()-1).equalsIgnoreCase("versicolor")){
 
             this.actualType=IrisType.Versicolor;
-        }else if (irisType.substring(1, irisType.length()-1).equalsIgnoreCase("virginica")){
+        }else if (actualType.substring(1, actualType.length()-1).equalsIgnoreCase("virginica")){
 
             this.actualType=IrisType.Virginica;
         }
