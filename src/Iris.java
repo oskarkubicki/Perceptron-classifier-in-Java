@@ -8,6 +8,26 @@ public class Iris {
     private IrisType irisType;
     private TreeMap<Double,IrisType> distances;
 
+
+
+
+    public Iris(double sepal_length, double sepal_width, double petal_legth, double petal_width, String irisType) {
+        this.sepal_length = sepal_length;
+        this.sepal_width = sepal_width;
+        this.petal_legth = petal_legth;
+        this.petal_width = petal_width;
+        if(irisType.equalsIgnoreCase("setosa")){
+
+            this.irisType=IrisType.Setosa;
+        }else if (irisType.equalsIgnoreCase("versicolor")){
+
+            this.irisType=IrisType.Versicolor;
+        }else {
+
+            this.irisType=IrisType.Virginica;
+        }
+    }
+
     public double getSepal_length() {
         return sepal_length;
     }
@@ -54,5 +74,18 @@ public class Iris {
 
     public void setDistances(TreeMap<Double, IrisType> distances) {
         this.distances = distances;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Iris{" +
+                "sepal_length=" + sepal_length +
+                ", sepal_width=" + sepal_width +
+                ", petal_legth=" + petal_legth +
+                ", petal_width=" + petal_width +
+                ", irisType=" + irisType +
+                ", distances=" + distances +
+                '}';
     }
 }

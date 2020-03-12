@@ -8,7 +8,7 @@ public class DataReader {
     private String file ;
     String line = "";
 
-    private ArrayList<Iris> product;
+    private ArrayList<Iris> product=new ArrayList<>();
 
 
     public ArrayList<Iris> readfile(String path) {
@@ -17,23 +17,15 @@ public class DataReader {
 
         try {
             reader = new BufferedReader(new FileReader(file));
+            reader.readLine();
+            System.out.println("hello");
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
 
-
-                System.out.println(data[0]);
-
-
-
-
-
-
-
-
-                
+                product.add(new Iris(Double.parseDouble(data[1]),Double.parseDouble(data[2]),Double.parseDouble(data[3]),Double.parseDouble(data[4]),data[5]));
             }
 
-
+            System.out.println(product);
 
 
 
