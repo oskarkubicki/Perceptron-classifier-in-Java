@@ -33,8 +33,10 @@ public class Iris {
 
 
 
-
-        if(actualType.substring(1, actualType.length()-1).equalsIgnoreCase("setosa")){
+        if(actualType==null){
+            this.actualType=null;
+        }
+        else if(actualType.substring(1, actualType.length()-1).equalsIgnoreCase("setosa")){
 
             this.actualType=IrisType.Setosa;
         }else if (actualType.substring(1, actualType.length()-1).equalsIgnoreCase("versicolor")){
