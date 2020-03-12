@@ -16,30 +16,31 @@ public class Iris {
         this.sepal_width = sepal_width;
         this.petal_legth = petal_legth;
         this.petal_width = petal_width;
-        if(irisType.equalsIgnoreCase("setosa")){
+
+        if(irisType==null){
+            this.irisType=null;
+        }
+        else if(irisType.substring(1, irisType.length()-1).equalsIgnoreCase("setosa")){
 
             this.irisType=IrisType.Setosa;
-        }else if (irisType.equalsIgnoreCase("versicolor")){
+        }else if (irisType.substring(1, irisType.length()-1).equalsIgnoreCase("versicolor")){
 
             this.irisType=IrisType.Versicolor;
-        }else if (irisType.equalsIgnoreCase("virginica")){
+        }else if (irisType.substring(1, irisType.length()-1).equalsIgnoreCase("virginica")){
 
             this.irisType=IrisType.Virginica;
         }
 
-        else {
-
-            this.irisType=null;
-        }
 
 
-        if(actualType.equalsIgnoreCase("setosa")){
+
+        if(irisType.substring(1, irisType.length()-1).equalsIgnoreCase("setosa")){
 
             this.actualType=IrisType.Setosa;
-        }else if (irisType.equalsIgnoreCase("versicolor")){
+        }else if (irisType.substring(1, irisType.length()-1).equalsIgnoreCase("versicolor")){
 
             this.actualType=IrisType.Versicolor;
-        }else if (irisType.equalsIgnoreCase("virginica")){
+        }else if (irisType.substring(1, irisType.length()-1).equalsIgnoreCase("virginica")){
 
             this.actualType=IrisType.Virginica;
         }
@@ -117,6 +118,7 @@ public class Iris {
                 ", petal_width=" + petal_width +
                 ", irisType=" + irisType +
                 ", distances=" + distances +
+                ", actualType=" + actualType +
                 '}';
     }
 }

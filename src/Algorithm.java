@@ -21,10 +21,13 @@ public class Algorithm {
         training_data = dataReader.readfile(data_path, "train");
         System.out.println("input path to test data");
         String data_path1 = scanner.next();
-        test_data = dataReader.readfile(data_path1, "test");
+
+        DataReader dataReader1=new DataReader();
+        test_data = dataReader1.readfile(data_path1, "test");
 
 
         FindDistances();
+        PredictType(Integer.parseInt(k));
 
 
     }
@@ -72,9 +75,9 @@ public class Algorithm {
 
             if(counterSetosa>counterVersicolor&&counterSetosa>counterVirginica){
 
-                test_data.get(i).setIrisType(IrisType.Setosa);
 
-                System.out.println("Predicted type: "+test_data.get(i).getIrisType()+" Actual type"+test_data.get(i).getActualType());
+
+                System.out.println("Predicted type: Virginica Setosa "+" Actual type"+test_data.get(i).getIrisType());
 
             }
         }
