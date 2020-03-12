@@ -6,10 +6,5 @@ public class Main {
 
         algorithm.mainloop();
 
-
-
-
-
-
     }
 }

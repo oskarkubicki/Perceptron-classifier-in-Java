@@ -7,8 +7,11 @@ public class Iris {
     private double petal_width;
     private IrisType irisType;
     private TreeMap<Double,IrisType> distances;
+    private IrisType actualType;
 
-    public Iris(double sepal_length, double sepal_width, double petal_legth, double petal_width, String irisType) {
+
+
+    public Iris(double sepal_length, double sepal_width, double petal_legth, double petal_width, String irisType, String actualType) {
         this.sepal_length = sepal_length;
         this.sepal_width = sepal_width;
         this.petal_legth = petal_legth;
@@ -27,6 +30,23 @@ public class Iris {
         else {
 
             this.irisType=null;
+        }
+
+
+        if(actualType.equalsIgnoreCase("setosa")){
+
+            this.actualType=IrisType.Setosa;
+        }else if (irisType.equalsIgnoreCase("versicolor")){
+
+            this.actualType=IrisType.Versicolor;
+        }else if (irisType.equalsIgnoreCase("virginica")){
+
+            this.actualType=IrisType.Virginica;
+        }
+
+        else {
+
+            this.actualType=null;
         }
     }
 
@@ -76,6 +96,15 @@ public class Iris {
 
     public void setDistances(TreeMap<Double, IrisType> distances) {
         this.distances = distances;
+    }
+
+
+    public IrisType getActualType() {
+        return actualType;
+    }
+
+    public void setActualType(IrisType actualType) {
+        this.actualType = actualType;
     }
 
 
