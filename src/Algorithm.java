@@ -84,8 +84,8 @@ public class Algorithm {
 
             for (int j = 0; j < training_data.size(); j++) {
 
-                distance = Math.sqrt(Math.pow(iris.getSepal_width() - training_data.get(j).getSepal_width(), 2) + Math.pow(iris.getPetal_width() - training_data.get(j).getPetal_width(), 2));
 
+                distance = Math.sqrt(Math.pow(iris.getSepal_width() - training_data.get(j).getSepal_width(), 2) +Math.pow(iris.getSepal_length() - training_data.get(j).getSepal_length(), 2)+ Math.pow(iris.getPetal_width() - training_data.get(j).getPetal_width(), 2)+Math.pow(iris.getPetal_legth() - training_data.get(j).getPetal_legth(), 2));
                 iris.getDistances().put(distance, training_data.get(j).getIrisType());
             }
 
