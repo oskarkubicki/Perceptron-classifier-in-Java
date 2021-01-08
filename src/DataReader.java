@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class DataReader {
 
     private BufferedReader reader;
-    private String file ;
+    private String file;
     String line = "";
 
-    private ArrayList<Iris> product=new ArrayList<>();
+    private ArrayList<Iris> product = new ArrayList<>();
 
-    public ArrayList<Iris> readfile(String path,String trainOrTest) {
+    public ArrayList<Iris> readfile(String path, String trainOrTest) {
 
-        file=path;
+        file = path;
 
         try {
             reader = new BufferedReader(new FileReader(file));
@@ -21,24 +21,15 @@ public class DataReader {
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
 
-                if(trainOrTest.equalsIgnoreCase("train")){
+                if (trainOrTest.equalsIgnoreCase("train")) {
 
-                    product.add(new Iris(Double.parseDouble(data[1]),Double.parseDouble(data[2]),Double.parseDouble(data[3]),Double.parseDouble(data[4]),data[5],data[5]));
+                    product.add(new Iris(Double.parseDouble(data[1]), Double.parseDouble(data[2]), Double.parseDouble(data[3]), Double.parseDouble(data[4]), data[5], data[5]));
 
-
-
-                }
-
-                else {
-                    product.add(new Iris(Double.parseDouble(data[1]),Double.parseDouble(data[2]),Double.parseDouble(data[3]),Double.parseDouble(data[4]),null,data[5]));
-
-
-
+                } else {
+                    product.add(new Iris(Double.parseDouble(data[1]), Double.parseDouble(data[2]), Double.parseDouble(data[3]), Double.parseDouble(data[4]), null, data[5]));
 
                 }
             }
-
-
 
         } catch (Exception e) {
             e.printStackTrace();
